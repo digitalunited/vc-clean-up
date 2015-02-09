@@ -123,9 +123,7 @@ class Utils
                 global $vc_row_layouts;
 
                 foreach ($vc_row_layouts as $key => $vcRowLayout) {
-                    array_search($vcRowLayout['title'], $rowLayoutsToKeep);
-
-                    if (false !== array_search($vcRowLayout['title'], $rowLayoutsToKeep)) {
+                    if (false === array_search($vcRowLayout['title'], $rowLayoutsToKeep)) {
                         unset($vc_row_layouts[$key]);
                     }
                 }
