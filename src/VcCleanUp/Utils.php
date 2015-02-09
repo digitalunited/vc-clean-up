@@ -5,10 +5,10 @@ class Utils
     protected $stdModules;
     protected $whiteListedModules;
 
-    function __construct($stdModules, $whiteListedModules)
+    function __construct($stdModules, $config)
     {
         $this->stdModules = $stdModules;
-        $this->whiteListedModules = $whiteListedModules;
+        $this->whiteListedModules = $config['enabledStdModules'];
     }
 
     /**
@@ -89,7 +89,7 @@ class Utils
     public function removeExtraClassNameField($param)
     {
         if ($param) {
-            add_action('theme_setup', function () {
+            add_action('init', function () {
                 foreach ($this->whiteListedModules as $moduleName) {
                     vc_remove_param($moduleName, 'el_class');
                 }
@@ -104,7 +104,7 @@ class Utils
     public function removeDesignOptionsTab($param)
     {
         if ($param) {
-            add_action('theme_setup', function () {
+            add_action('init', function () {
                 foreach ($this->whiteListedModules as $moduleName) {
                     vc_remove_param($moduleName, 'css');
                 }
@@ -125,7 +125,7 @@ class Utils
                 foreach ($vc_row_layouts as $key => $vcRowLayout) {
                     array_search($vcRowLayout['title'], $rowLayoutsToKeep);
 
-                    if (!array_search($vcRowLayout['title'], $rowLayoutsToKeep)) {
+                    if (false !== array_search($vcRowLayout['title'], $rowLayoutsToKeep)) {
                         unset($vc_row_layouts[$key]);
                     }
                 }
