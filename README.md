@@ -49,5 +49,5 @@ Removes alot of unusefull buttons from VisualComposers admin GUI
 Values: true/false
 
 ##TODO
-- Put the pakage on pagagist
 - Add better standard config for the boilerplatefile.
+- "hideVcAdminButtons" shuld take an array sow we can tweek it.
