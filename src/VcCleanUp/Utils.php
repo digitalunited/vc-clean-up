@@ -173,6 +173,7 @@ class Utils
                         #visual_composer_content .wpb_vc_row .vc_controls-row .vc_column-toggle, /* Hides all toggle-buttons on rows */
                         #visual_composer_content .wpb_vc_column_inner .vc_control-column .vc_column-add, /* Hides ALL buttons in columns */
                         #visual_composer_content .wpb_vc_column_inner .vc_control-column .vc_column-edit, /* Hides edit-buttons in inner-columns */
+                        #visual_composer_content .wpb_vc_column .vc_control-column .vc_column-edit, /* Hides edit-buttons in inner-columns */
                         #visual_composer_content .wpb_vc_column .vc_control-column .vc_column-delete /* Hides delete-buttons on all columns */
                         {display:none; visibility: hidden;}
                         /* Override to show bottom add-buttons */
@@ -181,7 +182,7 @@ class Utils
 
                         #wpb_visual_composer .vc_navbar-nav #vc_post-settings-button,
                         /*#wpb_visual_composer .vc_navbar-nav #wpb-edit-inline,*/
-                        #wpb_visual_composer .vc_navbar-nav #vc_add-new-element,
+                        /*#wpb_visual_composer .vc_navbar-nav #vc_add-new-element,*/
                         #wpb_visual_composer .vc_navbar-header .vc_navbar-brand
                         {display:none; visibility: hidden;}
                     </style>
