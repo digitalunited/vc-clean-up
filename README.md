@@ -53,5 +53,5 @@ Removes alot of unusefull buttons from VisualComposers admin GUI
 Values: true/false
 
 ##TODO
-- Add better standard config for the boilerplatefile.
-- "hideVcAdminButtons" shuld take an array sow we can tweek it.
+- Add better standard config for the boilerplate-file.
+- "hideVcAdminButtons" should take an array sow we can tweak it.
