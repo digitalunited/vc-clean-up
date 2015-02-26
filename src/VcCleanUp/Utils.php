@@ -158,6 +158,23 @@ class Utils
     }
 
     /**
+     * Keep all templates withe the custom_class in array $templatesToKeep
+     * @param $templatesToKeep
+     */
+    public function keepDefaultTemplates($templatesToKeep)
+    {
+        if (is_array($templatesToKeep)) {
+            add_filter('vc_load_default_templates', function ($templates) use ($templatesToKeep) {
+                $returnArray = array_filter($templates, function ($var) use ($templatesToKeep) {
+                    return in_array($var['custom_class'], $templatesToKeep);
+                });
+
+                return $returnArray;
+            });
+        }
+    }
+
+    /**
      * Removes alot of unusefull buttons from VisualComposers admin GUI if $param equals true
      * @param $param
      */

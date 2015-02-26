@@ -44,6 +44,10 @@ Values: true/false
 Removes Grid Elements from the admin menu
 Values: true/false
 
+###keepDefaultTemplates
+Specify witch VC default templates to keep. The array should contain the custom_class of the the default template.
+Value: false / array with default templates to keep (t.ex ['vc_default_template-39', 'vc_default_template-1'])
+
 ###hideVcAdminButtons
 Removes alot of unusefull buttons from VisualComposers admin GUI
 Values: true/false

@@ -24,5 +24,6 @@ return [
     //'newRowLayouts' => [[],[],[]]
     'setVcAsTheme' => true,
     'disableGridElements' => true,
+    'keepDefaultTemplates' => [],
     'hideVcAdminButtons' => true,
 ];
