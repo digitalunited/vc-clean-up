@@ -154,6 +154,11 @@ class Utils
             add_action('admin_menu', function () {
                 remove_menu_page('edit.php?post_type=vc_grid_item');
             });
+
+            add_action('admin_bar_menu', function($wp_admin_bar)
+            {
+                $wp_admin_bar->remove_node('new-vc_grid_item');
+            }, 999);
         }
     }
 
@@ -163,15 +168,15 @@ class Utils
      */
     public function keepDefaultTemplates($templatesToKeep)
     {
-        if (is_array($templatesToKeep)) {
-            add_filter('vc_load_default_templates', function ($templates) use ($templatesToKeep) {
+        add_filter('vc_load_default_templates', function ($templates) use ($templatesToKeep) {
+            $returnArray = [];
+            if (is_array($templatesToKeep)) {
                 $returnArray = array_filter($templates, function ($var) use ($templatesToKeep) {
                     return in_array($var['custom_class'], $templatesToKeep);
                 });
-
-                return $returnArray;
-            });
-        }
+            }
+            return $returnArray;
+        });
     }
 
     /**
