@@ -11,7 +11,7 @@ return [
     ],
     'useBootstrapGrid' => true,
     'deregisterFrontendStyles' => true,
-    'disableFrontendEditor' => true,
+    'disableFrontendEditor' => false,
     'removeExtraClassNameField' => true,
     'removeDesignOptionsTab' => true,
     'enableRowLayouts' => [ //TRUE or ARRAY
