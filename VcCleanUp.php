@@ -25,6 +25,8 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
 }
 
 add_action('admin_init', function () {
-    $vcCleanUp = new \DigitalUnited\VcCleanUp\VcCleanUp();
-    $vcCleanUp->go();
+    if (function_exists('vc_remove_element')) {
+        $vcCleanUp = new \DigitalUnited\VcCleanUp\VcCleanUp();
+        $vcCleanUp->go();
+    }
 });
