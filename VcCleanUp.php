@@ -24,7 +24,7 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require __DIR__ . '/vendor/autoload.php';
 }
 
-add_action('init', function () {
+add_action('plugins_loaded', function () {
     if (function_exists('vc_remove_element')) {
         $vcCleanUp = new \DigitalUnited\VcCleanUp\VcCleanUp();
         $vcCleanUp->go();
