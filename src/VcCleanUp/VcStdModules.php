@@ -3,7 +3,7 @@
 class VcStdModules {
     static function get() {
         return [
-            'vc_accordion',
+            'vc_tta_accordion',
             'vc_basic_grid',
             'vc_btn',
             'vc_button',
@@ -34,10 +34,10 @@ class VcStdModules {
             'vc_raw_js',
             'vc_separator',
             'vc_single_image',
-            'vc_tabs',
+            'vc_tta_tabs',
             'vc_text_separator',
             'vc_toggle',
-            'vc_tour',
+            'vc_tta_tour',
             'vc_tweetmeme',
             'vc_video',
             'vc_widget_sidebar',
@@ -54,6 +54,8 @@ class VcStdModules {
             'vc_wp_search',
             'vc_wp_tagcloud',
             'vc_wp_text',
+            'vc_round_chart',
+            'vc_line_chart'
         ];
     }
 }
