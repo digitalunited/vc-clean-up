@@ -55,7 +55,8 @@ class VcStdModules {
             'vc_wp_tagcloud',
             'vc_wp_text',
             'vc_round_chart',
-            'vc_line_chart'
+            'vc_line_chart',
+            'vc_tta_pageable'
         ];
     }
 }
