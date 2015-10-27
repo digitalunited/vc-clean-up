@@ -155,8 +155,7 @@ class Utils
                 remove_menu_page('edit.php?post_type=vc_grid_item');
             });
 
-            add_action('admin_bar_menu', function($wp_admin_bar)
-            {
+            add_action('admin_bar_menu', function ($wp_admin_bar) {
                 $wp_admin_bar->remove_node('new-vc_grid_item');
             }, 999);
         }
@@ -189,24 +188,17 @@ class Utils
             add_action('admin_head', function () {
                 echo '
                     <style type="text/css">
-                        #visual_composer_content .wpb_vc_row_inner .vc_controls-row .vc_column-edit, /* Hides edit-button on inner-row */
-                        #visual_composer_content .wpb_vc_row .vc_controls-row .custom_columns, /* Hides "custom columns"-button in row column settings */
-                        #visual_composer_content .wpb_vc_row .vc_controls-row .vc_column-add, /* Hides "add column"-button on rows */
-                        #visual_composer_content .wpb_vc_row .vc_controls-row .vc_column-toggle, /* Hides all toggle-buttons on rows */
-                        #visual_composer_content .wpb_vc_column_inner .vc_control-column .vc_column-add, /* Hides ALL buttons in columns */
-                        #visual_composer_content .wpb_vc_column_inner .vc_control-column .vc_column-edit, /* Hides edit-buttons in inner-columns */
-                        #visual_composer_content .wpb_vc_column .vc_control-column .vc_column-edit, /* Hides edit-buttons in inner-columns */
-                        #visual_composer_content .wpb_vc_column .vc_control-column .vc_column-delete /* Hides delete-buttons on all columns */
-                        {display:none; visibility: hidden;}
-                        /* Override to show bottom add-buttons */
-                        #visual_composer_content .wpb_vc_column_inner .vc_control-column.bottom-controls .vc_column-add
-                        {display:block; visibility: visible;}
-
-                        #wpb_visual_composer .vc_navbar-nav #vc_post-settings-button,
-                        /*#wpb_visual_composer .vc_navbar-nav #wpb-edit-inline,*/
-                        /*#wpb_visual_composer .vc_navbar-nav #vc_add-new-element,*/
-                        #wpb_visual_composer .vc_navbar-header .vc_navbar-brand
-                        {display:none; visibility: hidden;}
+                        .vc_control.column_toggle.vc_column-toggle, /* Hides add column and toggle row */
+                        .vc_control.column_add.vc_column-add,
+                        #vc_post-settings-button
+                        {
+                            display:none; visibility: hidden;
+                        }
+                        /* Hides logo */
+                        .vc_navbar .vc_navbar-header
+                        {
+                            display:block; visibility: visible;
+                        }
                     </style>
                 ';
             });

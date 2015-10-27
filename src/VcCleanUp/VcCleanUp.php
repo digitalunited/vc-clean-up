@@ -27,7 +27,7 @@ class VcCleanUp
 
     protected function getConfigPath()
     {
-        return get_template_directory() . '/VcCleanUpConfig.php';
+        return get_stylesheet_directory() . '/VcCleanUpConfig.php';
     }
 
     protected function loadConfig()

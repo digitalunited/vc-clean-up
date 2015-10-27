@@ -10,7 +10,7 @@
 function createCleanupConfigIfNotExists()
 {
     $boilerplaceConfigPath = __DIR__.'/configBoilerplate.php';
-    $themeConfigPath = get_template_directory().'/VcCleanUpConfig.php';
+    $themeConfigPath = get_stylesheet_directory().'/VcCleanUpConfig.php';
 
     if (!file_exists($themeConfigPath)) {
         copy($boilerplaceConfigPath, $themeConfigPath);
