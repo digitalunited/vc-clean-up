@@ -45,7 +45,6 @@ class Utils
           $class_string = str_replace(' wpb_row', '', $class_string);
           $class_string = str_replace(' vc_row-fluid', '', $class_string);
           $class_string = str_replace(' vc_column_container', '', $class_string);
-          $class_string = str_replace(' wpb_column', '', $class_string);
 
           //Remove all vc_prefixes
           $class_string = str_replace('vc_', '', $class_string);
