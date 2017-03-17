@@ -63,6 +63,10 @@ class Utils
    */
   public function deregisterFrontendStyles($param)
   {
+     if (is_user_logged_in()) {
+        return false;
+     }
+
     if ($param) {
       add_action('wp_enqueue_scripts', function () {
         wp_deregister_style('js_composer_front');
