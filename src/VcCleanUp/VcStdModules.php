@@ -57,7 +57,8 @@ class VcStdModules {
             'vc_round_chart',
             'vc_line_chart',
             'vc_tta_pageable',
-            'vc_acf'
+            'vc_acf',
+            'vc_section',
         ];
     }
 }
