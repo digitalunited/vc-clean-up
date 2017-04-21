@@ -52,6 +52,6 @@ Value: false / array with default templates to keep (t.ex ['vc_default_template-
 Removes alot of unusefull buttons from VisualComposers admin GUI
 Values: true/false
 
-##TODO
-- Add better standard config for the boilerplate-file.
-- "hideVcAdminButtons" should take an array sow we can tweak it.
+###keepDefaultColumnFields
+Specify which params from vc_column should be kept. If set to "all", all default fields will be kept. 
+Values: (string) "all" / (array) ['param_name1', 'param_name2', ...]
