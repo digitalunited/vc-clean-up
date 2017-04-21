@@ -26,4 +26,9 @@ return [
     'disableGridElements' => true,
     'keepDefaultTemplates' => [],
     'hideVcAdminButtons' => true,
+    'keepDefaultColumnFields' => [
+        //'css_animation', //CSS animation field
+        'width', //Column width field
+        'offset', //Column offset field
+    ],
 ];

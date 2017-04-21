@@ -208,4 +208,29 @@ class Utils
       });
     }
   }
+
+  public function keepDefaultColumnFields($paramsToKeep)
+  {
+    if (!is_array($paramsToKeep) || $paramsToKeep === 'all') {
+      return;
+    }
+    add_action('init', function () use ($paramsToKeep) {
+      $vcColumnPrevious = \WPBMap::getShortCode('vc_column');
+      //Exit early if we don't have any params
+      if (empty($vcColumnPrevious['params'])) {
+        return;
+      }
+
+      // Fill $newColumnSettings with the kept params of the column
+      $newColumnSettings = ['params' => []];
+      foreach ($vcColumnPrevious['params'] as $key => $param) {
+        if (in_array($param['param_name'], $paramsToKeep)) {
+          $newColumnSettings['params'][] = $param;
+        }
+      }
+
+      //Update vc_column with the new params
+      vc_map_update('vc_column', $newColumnSettings);
+    });
+  }
 }
