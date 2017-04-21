@@ -6,6 +6,8 @@
  * Author URI: http://digitalunited.io
  */
 
+define('VC_CLEAN_UP_PLUGIN_PATH', plugin_dir_path(__FILE__));
+
 
 function createCleanupConfigIfNotExists()
 {

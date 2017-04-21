@@ -33,10 +33,17 @@ class VcCleanUp
     return get_stylesheet_directory() . '/VcCleanUpConfig.php';
   }
 
+  private function getDefaultConfigPath()
+  {
+    return VC_CLEAN_UP_PLUGIN_PATH . 'configBoilerplate.php';
+  }
+
   protected function loadConfig()
   {
     if (file_exists($this->getConfigPath())) {
-      $this->config = include($this->getConfigPath());
+      $userConfig = include($this->getConfigPath());
+      $defaultConfig = include($this->getDefaultConfigPath());
+      $this->config = array_merge($defaultConfig, $userConfig);
     }
     else {
       return false;
@@ -67,4 +74,5 @@ class VcCleanUp
       throw new \Exception($method . ': Is not a valid VcCleanUpConfig entry');
     }
   }
+
 }
