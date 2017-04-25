@@ -154,7 +154,7 @@ class Utils
   public function disableGridElements($param)
   {
     if ($param) {
-      add_action('admin_init', function () {
+      add_action('admin_menu', function () {
         remove_menu_page('edit.php?post_type=vc_grid_item');
         remove_menu_page('vc-welcome');
       });
