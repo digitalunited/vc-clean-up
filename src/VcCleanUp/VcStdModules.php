@@ -59,6 +59,8 @@ class VcStdModules {
             'vc_tta_pageable',
             'vc_acf',
             'vc_section',
+            'vc_zigzag',
+            'vc_hoverbox',
         ];
     }
 }
