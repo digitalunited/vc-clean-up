@@ -254,6 +254,10 @@ class Utils
     }
   }
 
-
-
+  public static function setVCAsDefaultEditorForPostTypes($postTypes)
+  {
+    if (!empty($postTypes) && function_exists('vc_set_default_editor_post_types')) {
+      vc_set_default_editor_post_types($postTypes);
+    }
+  }
 }

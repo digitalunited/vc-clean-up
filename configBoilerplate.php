@@ -32,4 +32,9 @@ return [
         'offset', //Column offset field
     ],
     'removeDeprecatedNoticeOnModules' => true,
+    'setVCAsDefaultEditorForPostTypes' => [
+        'page',
+        'post',
+        'recurrent_content',
+    ]
 ];
