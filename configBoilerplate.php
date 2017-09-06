@@ -31,4 +31,5 @@ return [
         'width', //Column width field
         'offset', //Column offset field
     ],
+    'removeDeprecatedNoticeOnModules' => true,
 ];

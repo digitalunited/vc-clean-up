@@ -34,10 +34,10 @@ class Utils
       add_filter('vc_shortcodes_css_class', function ($class_string, $tag) {
 
         $tags_to_clean = [
-            'vc_row',
-            'vc_column',
-            'vc_row_inner',
-            'vc_column_inner'
+          'vc_row',
+          'vc_column',
+          'vc_row_inner',
+          'vc_column_inner',
         ];
 
         if (in_array($tag, $tags_to_clean)) {
@@ -63,9 +63,9 @@ class Utils
    */
   public function deregisterFrontendStyles($param)
   {
-     if (is_user_logged_in()) {
-        return false;
-     }
+    if (is_user_logged_in()) {
+      return false;
+    }
 
     if ($param) {
       add_action('wp_enqueue_scripts', function () {
@@ -178,6 +178,7 @@ class Utils
           return in_array($var['custom_class'], $templatesToKeep);
         });
       }
+
       return $returnArray;
     });
   }
@@ -233,4 +234,26 @@ class Utils
       vc_map_update('vc_column', $newColumnSettings);
     });
   }
+
+  public function removeDeprecatedNoticeOnModules($param)
+  {
+    if ($param) {
+      add_action('vc_after_init', function () {
+        vc_map_update('vc_tabs', [
+          'deprecated' => false,
+        ]);
+
+        vc_map_update('vc_accordion', [
+          'deprecated' => false,
+        ]);
+
+        vc_map_update('vc_tour', [
+          'deprecated' => false,
+        ]);
+      });
+    }
+  }
+
+
+
 }
