@@ -260,4 +260,13 @@ class Utils
       vc_set_default_editor_post_types($postTypes);
     }
   }
+
+  public static function disableFrontJS($param)
+  {
+    if ($param) {
+      add_action('wp_enqueue_scripts', function () {
+        wp_deregister_script('wpb_composer_front_js');
+      });
+    }
+  }
 }

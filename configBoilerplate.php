@@ -36,5 +36,6 @@ return [
         'page',
         'post',
         'recurrent_content',
-    ]
+    ],
+    'disableFrontJS' => true,
 ];
