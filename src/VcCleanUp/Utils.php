@@ -63,15 +63,20 @@ class Utils
    */
   public function deregisterFrontendStyles($param)
   {
-    if (is_user_logged_in()) {
-      return false;
+    if (!$param) {
+      return;
     }
 
-    if ($param) {
+    add_action('init', function () {
+      //Don't deregister VCs CSS when using the frontend editor
+      if (in_array(vc_mode(), ['page_editable', 'admin_page', 'admin_frontend_editor'])) {
+        return;
+      }
+
       add_action('wp_enqueue_scripts', function () {
         wp_deregister_style('js_composer_front');
       });
-    }
+    });
   }
 
   /**
